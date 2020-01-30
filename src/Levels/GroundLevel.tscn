@@ -11,6 +11,10 @@ scale = Vector2( 0.15, 0.3 )
 speed = Vector2( 150, 350 )
 gravity = 1500.0
 
+[node name="Camera2D" type="Camera2D" parent="Player"]
+current = true
+zoom = Vector2( 0.25, 0.25 )
+
 [node name="Ground" type="TileMap" parent="."]
 tile_set = ExtResource( 2 )
 cell_size = Vector2( 16, 16 )
