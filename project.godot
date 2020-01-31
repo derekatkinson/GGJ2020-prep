@@ -24,6 +24,10 @@ config/name="GDQuest Platformer"
 run/main_scene="res://src/Levels/TestLevel.tscn"
 config/icon="res://icon.png"
 
+[display]
+
+window/size/width=800
+
 [input]
 
 move_left={
