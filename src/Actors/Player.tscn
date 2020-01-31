@@ -48,10 +48,10 @@ gravity = 4000.0
 [node name="player" type="Sprite" parent="."]
 texture = ExtResource( 2 )
 hframes = 10
-frame = 1
+frame = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 0.623764, -0.248928 )
+position = Vector2( 0.623764, 0.107509 )
 shape = SubResource( 4 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
