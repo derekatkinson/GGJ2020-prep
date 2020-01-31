@@ -1,9 +1,22 @@
 extends Actor
 
+onready var player_sprite = get_node("player")
+onready var player_anim = get_node("AnimationPlayer")
+
 func _physics_process(delta: float) -> void:
 	var direction: = get_direction()
 	velocity = calculate_move_velocity(velocity, direction, speed)
 	velocity = move_and_slide(velocity, Vector2.UP)
+	
+	# Animation
+	if velocity.x == 0:
+		player_anim.play("Idle")
+	else:
+		player_anim.play("Walk")
+	if velocity.x > 0:
+		player_sprite.set_flip_h(false)
+	elif velocity.x < 0:
+		player_sprite.set_flip_h(true)
 	
 func get_direction() -> Vector2:
 	return Vector2(
