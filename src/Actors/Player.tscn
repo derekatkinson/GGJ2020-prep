@@ -4,7 +4,7 @@
 [ext_resource path="res://assets/anim_player.png" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=4]
-extents = Vector2( 4.74065, 12.1273 )
+extents = Vector2( 3.40402, 11.7708 )
 
 [sub_resource type="Animation" id=2]
 resource_name = "Idle"
@@ -51,7 +51,7 @@ hframes = 10
 frame = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 0.356438, -0.0707073 )
+position = Vector2( 0.623764, -0.248928 )
 shape = SubResource( 4 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
