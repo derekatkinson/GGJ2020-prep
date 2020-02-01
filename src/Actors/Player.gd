@@ -9,10 +9,13 @@ func _physics_process(delta: float) -> void:
 	velocity = move_and_slide(velocity, Vector2.UP)
 	
 	# Animation
+	var anim_idle = "Idle"
+	var anim_walk = "Walk"
+	
 	if velocity.x == 0:
-		player_anim.play("Idle")
+		player_anim.play(anim_idle)
 	else:
-		player_anim.play("Walk")
+		player_anim.play(anim_walk)
 	if velocity.x > 0:
 		player_sprite.set_flip_h(false)
 	elif velocity.x < 0:

@@ -1,9 +1,9 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://src/Actors/Player.gd" type="Script" id=1]
 [ext_resource path="res://assets/anim_player.png" type="Texture" id=2]
 
-[sub_resource type="RectangleShape2D" id=4]
+[sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 3.40402, 11.7708 )
 
 [sub_resource type="Animation" id=2]
@@ -23,6 +23,23 @@ tracks/0/keys = {
 "values": [ 1, 1, 3, 4, 0 ]
 }
 
+[sub_resource type="Animation" id=4]
+resource_name = "IdleOrange"
+length = 2.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("player:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.4, 0.8, 1.2, 1.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 10, 11, 12, 13, 14 ]
+}
+
 [sub_resource type="Animation" id=3]
 resource_name = "Walk"
 loop = true
@@ -39,21 +56,39 @@ tracks/0/keys = {
 "values": [ 6, 7, 8, 9, 5 ]
 }
 
+[sub_resource type="Animation" id=5]
+resource_name = "WalkOrange"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("player:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6, 0.8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 15, 16, 17, 18, 19 ]
+}
+
 [node name="Player" type="KinematicBody2D"]
-position = Vector2( 466.356, 131.394 )
 collision_mask = 8
 script = ExtResource( 1 )
 speed = Vector2( 500, 1000 )
+gravity = 4000.0
 
 [node name="player" type="Sprite" parent="."]
 texture = ExtResource( 2 )
-hframes = 10
-frame = 3
+hframes = 20
+frame = 17
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0.623764, 0.107509 )
-shape = SubResource( 4 )
+shape = SubResource( 1 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/Idle = SubResource( 2 )
+anims/IdleOrange = SubResource( 4 )
 anims/Walk = SubResource( 3 )
+anims/WalkOrange = SubResource( 5 )
