@@ -91,3 +91,8 @@ anims/Idle = SubResource( 2 )
 anims/IdleOrange = SubResource( 3 )
 anims/Walk = SubResource( 4 )
 anims/WalkOrange = SubResource( 5 )
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.1
+one_shot = true
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
