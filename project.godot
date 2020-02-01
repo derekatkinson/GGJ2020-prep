@@ -21,8 +21,12 @@ _global_script_class_icons={
 [application]
 
 config/name="GDQuest Platformer"
-run/main_scene="res://src/Levels/TestLevel.tscn"
+run/main_scene="res://src/Levels/GroundLevel.tscn"
 config/icon="res://icon.png"
+
+[autoload]
+
+PlayerData="*res://src/AutoLoaders/PlayerData.tscn"
 
 [display]
 

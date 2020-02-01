@@ -8,9 +8,15 @@ func _physics_process(delta: float) -> void:
 	velocity = calculate_move_velocity(velocity, direction, speed)
 	velocity = move_and_slide(velocity, Vector2.UP)
 	
+	
+	
 	# Animation
 	var anim_idle = "Idle"
 	var anim_walk = "Walk"
+	
+	if PlayerData.upgrade:
+		anim_idle = "IdleOrange"
+		anim_walk = "WalkOrange"
 	
 	if velocity.x == 0:
 		player_anim.play(anim_idle)
